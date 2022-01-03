@@ -1,5 +1,6 @@
 package Pepse;
 import Pepse.world.Sky;
+import Pepse.world.Terrain;
 import danogl.GameManager;
 import danogl.GameObject;
 import danogl.collisions.Layer;
@@ -20,8 +21,9 @@ public class PepseGameManager extends GameManager{
                                UserInputListener inputListener,
                                WindowController windowController) {
         super.initializeGame(imageReader, soundReader, inputListener, windowController);
+        GameObject sky = Sky.create(this.gameObjects(), windowController.getWindowDimensions(), Layer.BACKGROUND);
 
-        GameObject sky = Sky.create(this.gameObjects(), new Vector2(700,500), Layer.BACKGROUND);
-
+        Terrain terrain = new Terrain(this.gameObjects(), Layer.STATIC_OBJECTS, windowController.getWindowDimensions());
+        terrain.createInRange(0,(int)windowController.getWindowDimensions().x());
     }
 }
