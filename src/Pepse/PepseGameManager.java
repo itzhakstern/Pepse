@@ -21,6 +21,7 @@ public class PepseGameManager extends GameManager{
                                WindowController windowController) {
         super.initializeGame(imageReader, soundReader, inputListener, windowController);
 
-        Sky.create(this.gameObjects(), new Vector2(700,500), Layer.BACKGROUND);
+        GameObject sky = Sky.create(this.gameObjects(), new Vector2(700,500), Layer.BACKGROUND);
+
     }
 }
