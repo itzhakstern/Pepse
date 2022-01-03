@@ -1,9 +1,13 @@
 package Pepse;
+import Pepse.world.Sky;
 import danogl.GameManager;
+import danogl.GameObject;
+import danogl.collisions.Layer;
 import danogl.gui.ImageReader;
 import danogl.gui.SoundReader;
 import danogl.gui.UserInputListener;
 import danogl.gui.WindowController;
+import danogl.util.Vector2;
 
 public class PepseGameManager extends GameManager{
     public static void main(String[] args) {
@@ -16,5 +20,7 @@ public class PepseGameManager extends GameManager{
                                UserInputListener inputListener,
                                WindowController windowController) {
         super.initializeGame(imageReader, soundReader, inputListener, windowController);
+
+        Sky.create(this.gameObjects(), new Vector2(700,500), Layer.BACKGROUND);
     }
 }
