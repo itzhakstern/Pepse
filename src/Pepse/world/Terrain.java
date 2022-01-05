@@ -29,27 +29,22 @@ public class Terrain {
         this.groundLayer = groundLayer;
         this.groundHeightAtX0 = windowDimensions.y() * (2f/3);
         this.windowDimensions = windowDimensions;
-        double seed = new Random().nextGaussian() * 255;
-//        double seed = new Random().nextInt();
-
-        System.out.println("seed: " + seed);
+//        double seed = new Random().nextGaussian() * 255; // ??
+        double seed = new Random().nextInt(150);
         perlinNoise = new PerlinNoise(seed);
     }
 
     public float groundHeightAt(float x) {
-        float v = perlinNoise.noise(x);
-        System.out.println("v: " + v);
-        return abs(v) * (this.windowDimensions.y() - 150);
+        float v = perlinNoise.noise(x / 20);
+        return this.windowDimensions.y()* (1f/3) * v +  (this.windowDimensions.y()) * (2f/3);
     }
 
     public void createInRange(int minX, int maxX) {
         RectangleRenderable rectangleRenderablenew = new RectangleRenderable(ColorSupplier.
                 approximateColor(BASE_GROUND_COLOR));
         for (int x = minX; x <= maxX; x += Block.SIZE) {
-//            float groundHeightAtX = groundHeightAt(x);
-//            System.out.println(groundHeightAtX);
-            double floor = Math.floor(groundHeightAt(x) / Block.SIZE) * Block.SIZE;
-            System.out.println("floor: "+ floor);
+            float groundHeightAtX = groundHeightAt(x);
+            double floor = Math.floor(groundHeightAtX / Block.SIZE) * Block.SIZE;
             while (floor <= this.windowDimensions.y()){
                 GameObject block = new Block(new Vector2(x,(int)floor),rectangleRenderablenew);
                 block.setTag("ground");
