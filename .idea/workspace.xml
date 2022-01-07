@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a421892-aff0-4fcc-884c-a6030c7de00c" name="Changes" comment="add class">
-      <change afterPath="$PROJECT_DIR$/src/Pepse/world/trees/BuildTrees.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Pepse/world/trees/Leaf.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Pepse/world/trees/Tree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pepse/Pepse/PepseGameManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pepse/Pepse/PepseGameManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pepse/Pepse/world/Terrain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pepse/Pepse/world/Terrain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pepse/PepseGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pepse/PepseGameManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pepse/world/Terrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pepse/world/Terrain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pepse/world/daynight/Sun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pepse/world/daynight/Sun.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pepse/world/daynight/SunHalo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pepse/world/daynight/SunHalo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +90,7 @@
       <workItem from="1641326929662" duration="5282000" />
       <workItem from="1641388985995" duration="947000" />
       <workItem from="1641401718447" duration="1432000" />
-      <workItem from="1641507787856" duration="14324000" />
+      <workItem from="1641507787856" duration="14774000" />
     </task>
     <task id="LOCAL-00001" summary="add class">
       <created>1641240041301</created>
@@ -150,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641516257490</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add class">
+      <created>1641524473597</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1641524473597</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
