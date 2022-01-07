@@ -4,6 +4,7 @@ import Pepse.world.Terrain;
 import Pepse.world.daynight.Night;
 import Pepse.world.daynight.Sun;
 import Pepse.world.daynight.SunHalo;
+import Pepse.world.trees.BuildTrees;
 import danogl.GameManager;
 import danogl.GameObject;
 import danogl.collisions.Layer;
@@ -11,7 +12,6 @@ import danogl.gui.ImageReader;
 import danogl.gui.SoundReader;
 import danogl.gui.UserInputListener;
 import danogl.gui.WindowController;
-import danogl.util.Vector2;
 
 import java.awt.*;
 
@@ -39,5 +39,7 @@ public class PepseGameManager extends GameManager{
         GameObject sunHalo = SunHalo.create(this.gameObjects(),sun,
                 new Color(255, 255, 0, 20),
                 Layer.BACKGROUND + 10);
+        BuildTrees.create(gameObjects(),terrain,windowController.getWindowDimensions());
+
     }
 }

@@ -13,9 +13,10 @@ public class SunHalo {
             GameObject sun,
             Color color,
             int layer){
-        GameObject sunHalo = new GameObject(sun.getTopLeftCorner().add(new Vector2(-30,-30)),
-                Vector2.ONES.mult(125),new OvalRenderable(color));
+        GameObject sunHalo = new GameObject(sun.getTopLeftCorner(),
+                Vector2.ONES.mult(500),new OvalRenderable(color));
         gameObjects.addGameObject(sunHalo,layer);
+        sunHalo.addComponent((deltaTime)->sunHalo.setCenter(sun.getCenter()));
         return sunHalo;
     }
 }

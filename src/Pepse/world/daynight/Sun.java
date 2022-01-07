@@ -11,7 +11,7 @@ import java.awt.*;
 public class Sun {
     private static Vector2 calcSunPosition(Vector2 windowDimensions, float angleInSky){
         Vector2 vector2 = windowDimensions.mult(0.5f);
-        int r = 200;
+        int r = 300;
         double x = r * Math.cos(angleInSky) + vector2.x();
         double y = r * Math.sin(angleInSky) + vector2.y();
         return new Vector2((float) x,(float) y);

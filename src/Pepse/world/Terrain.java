@@ -8,6 +8,7 @@ import danogl.gui.rendering.RectangleRenderable;
 import danogl.util.Vector2;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Random;
 
 import static java.lang.Math.abs;
@@ -21,6 +22,7 @@ public class Terrain {
     private float groundHeightAtX0;
     private Vector2 windowDimensions;
     private PerlinNoise perlinNoise;
+    private final ArrayList<Double> heightVector;
     public Terrain(GameObjectCollection gameObjects,
                    int groundLayer,
                    Vector2 windowDimensions){
@@ -31,12 +33,13 @@ public class Terrain {
         this.windowDimensions = windowDimensions;
 //        double seed = new Random().nextGaussian() * 255; // ??
         double seed = new Random().nextInt(150);
+        heightVector = new ArrayList<>();
         perlinNoise = new PerlinNoise(seed);
     }
 
     public float groundHeightAt(float x) {
         float v = perlinNoise.noise(x / 35);
-        return this.windowDimensions.y()* (1f/3) * v +  (this.windowDimensions.y()) * (2f/3);
+        return (this.windowDimensions.y() * v +  (this.windowDimensions.y())) * (2f/3);
     }
 
     public void createInRange(int minX, int maxX) {
@@ -45,6 +48,7 @@ public class Terrain {
         for (int x = minX; x <= maxX; x += Block.SIZE) {
             float groundHeightAtX = groundHeightAt(x);
             double floor = Math.floor(groundHeightAtX / Block.SIZE) * Block.SIZE;
+            heightVector.add(floor);
             while (floor <= this.windowDimensions.y()){
                 GameObject block = new Block(new Vector2(x,(int)floor),rectangleRenderablenew);
                 block.setTag("ground");
@@ -52,5 +56,8 @@ public class Terrain {
                 floor += block.getDimensions().y();
             }
         }
+    }
+    public Double getHieght(int index){
+        return heightVector.get(index);
     }
 }
