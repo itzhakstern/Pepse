@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a421892-aff0-4fcc-884c-a6030c7de00c" name="Changes" comment="add class">
-      <change beforePath="$PROJECT_DIR$/src/Pepse/world/Terrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pepse/world/Terrain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pepse/world/trees/Leaf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pepse/world/trees/Leaf.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +93,7 @@
       <workItem from="1641326929662" duration="5282000" />
       <workItem from="1641388985995" duration="947000" />
       <workItem from="1641401718447" duration="1432000" />
-      <workItem from="1641507787856" duration="14774000" />
+      <workItem from="1641507787856" duration="14324000" />
     </task>
     <task id="LOCAL-00001" summary="add class">
       <created>1641240041301</created>
@@ -141,14 +144,7 @@
       <option name="project" value="LOCAL" />
       <updated>1641516257490</updated>
     </task>
-    <task id="LOCAL-00008" summary="add class">
-      <created>1641524473597</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1641524473597</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,20 +160,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add class" />
     <option name="LAST_COMMIT_MESSAGE" value="add class" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Pepse/world/trees/Leaf.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

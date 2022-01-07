@@ -21,6 +21,7 @@ public class Leaf {
         System.out.printf("w, h = %d, %d%n", w, h);
         int x_ = (int)(center.x() - (w / 2)*Block.SIZE);
         int y_ = (int)(center.y() - (h/ 2)*Block.SIZE);
+        System.out.printf("x_, y_ = %d, %d%n", x_, y_);
         for(int i = x_; i < x_ + h* Block.SIZE   ;i+= Block.SIZE){
             for (int j = y_; j <y_ + w * Block.SIZE ;j+=Block.SIZE){
                 System.out.printf("center = %f, %f%n", center.x(), center.y());
