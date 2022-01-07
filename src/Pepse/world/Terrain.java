@@ -35,7 +35,7 @@ public class Terrain {
     }
 
     public float groundHeightAt(float x) {
-        float v = perlinNoise.noise(x / 20);
+        float v = perlinNoise.noise(x / 35);
         return this.windowDimensions.y()* (1f/3) * v +  (this.windowDimensions.y()) * (2f/3);
     }
 

@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a421892-aff0-4fcc-884c-a6030c7de00c" name="Changes" comment="add class">
+      <change afterPath="$PROJECT_DIR$/src/Pepse/world/daynight/Night.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pepse/world/daynight/Sun.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pepse/world/daynight/SunHalo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pepse/Pepse/PepseGameManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pepse/Pepse/PepseGameManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Pepse/Pepse/world/Terrain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pepse/Pepse/world/Terrain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pepse/PepseGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pepse/PepseGameManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pepse/world/Terrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pepse/world/Terrain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,16 +59,13 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Application.PepseGameManager">
-    <configuration name="PepseGameManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Cucumber Java.Unnamed (1)">
+    <configuration name="Unnamed (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" nameIsGenerated="true">
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/Pepse/PepseGameManager.java" />
       <option name="MAIN_CLASS_NAME" value="Pepse.PepseGameManager" />
       <module name="Pepse" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Pepse.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <shortenClasspath name="NONE" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -79,14 +81,9 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.PepseGameManager" />
+      <item itemvalue="Cucumber Java.Unnamed (1)" />
       <item itemvalue="Cucumber Java.Unnamed" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.PepseGameManager" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -99,7 +96,8 @@
       <workItem from="1641231086255" duration="12408000" />
       <workItem from="1641326929662" duration="5282000" />
       <workItem from="1641388985995" duration="947000" />
-      <workItem from="1641401718447" duration="797000" />
+      <workItem from="1641401718447" duration="1432000" />
+      <workItem from="1641507787856" duration="6976000" />
     </task>
     <task id="LOCAL-00001" summary="add class">
       <created>1641240041301</created>
@@ -136,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641328092336</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add class">
+      <created>1641403442269</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1641403442270</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
