@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3a421892-aff0-4fcc-884c-a6030c7de00c" name="Changes" comment="add class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pepse/Pepse/world/Terrain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pepse/Pepse/world/Terrain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pepse/world/Terrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pepse/world/Terrain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pepse/world/daynight/Sun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pepse/world/daynight/Sun.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pepse/world/trees/BuildTrees.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pepse/world/trees/BuildTrees.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pepse/world/trees/Leaf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pepse/world/trees/Leaf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pepse/world/trees/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pepse/world/trees/Tree.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641516257490</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add class">
+      <created>1641853097101</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1641853097101</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
