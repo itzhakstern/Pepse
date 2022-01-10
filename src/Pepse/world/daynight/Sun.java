@@ -25,7 +25,7 @@ public class Sun {
             GameObjectCollection gameObjects,
             int layer){
         GameObject sun = new GameObject(new Vector2(windowDimensions.x() / 2, windowDimensions.y() / 2),
-                Vector2.ONES.mult(75),new OvalRenderable(SUN));
+                Vector2.ONES.mult(130),new OvalRenderable(SUN));
         sun.setTag("sun");
         gameObjects.addGameObject(sun, layer);
 

@@ -13,21 +13,23 @@ import java.util.Random;
 public class Leaf {
     static Random random = new Random();
     private static final Color BASE_GROUND_COLOR = new Color(50, 200, 30);
-    private static final RectangleRenderable rectangleRenderablenew = new RectangleRenderable(ColorSupplier.
-            approximateColor(BASE_GROUND_COLOR));
-    public static void create(GameObjectCollection gameObjects, Vector2 center){
-        int w = random.nextInt(3)+1;
-        int h = random.nextInt(3)+3;
-        System.out.printf("w, h = %d, %d%n", w, h);
-        int x_ = (int)(center.x() - (w / 2)*Block.SIZE);
-        int y_ = (int)(center.y() - (h/ 2)*Block.SIZE);
-        System.out.printf("x_, y_ = %d, %d%n", x_, y_);
-        for(int i = x_; i < x_ + h* Block.SIZE   ;i+= Block.SIZE){
-            for (int j = y_; j <y_ + w * Block.SIZE ;j+=Block.SIZE){
-                System.out.printf("center = %f, %f%n", center.x(), center.y());
-                System.out.printf("i, j = %d, %d%n", i, j);
+//    private static final RectangleRenderable rectangleRenderablenew = new
+//            RectangleRenderable(ColorSupplier.
+//            approximateColor(BASE_GROUND_COLOR));
 
-                GameObject leaf = new Block(new Vector2(i,j),rectangleRenderablenew);
+    public static void create(GameObjectCollection gameObjects, Vector2 center){
+        int width = random.nextInt(3)+3;
+        int height = random.nextInt(3)+4;
+        int topLeftLeafsX = (int)(center.x() - (width / 2)*Block.SIZE);
+        int topLeftLeafsY = (int)(center.y() - (height/ 2)*Block.SIZE);
+        for(int i = topLeftLeafsX; i < topLeftLeafsX + (width+1) * Block.SIZE ;i+= Block.SIZE){
+            for (int j = topLeftLeafsY; j <topLeftLeafsY + (height+1) * Block.SIZE ;j+=Block.SIZE){
+                Color BASE_GROUND_COLOR = new Color(random.nextInt(10)+ 45
+                         ,random.nextInt(10) + 195,random.nextInt( 10) + 45);
+                RectangleRenderable rectangleRenderablenew = new
+                        RectangleRenderable(ColorSupplier.
+                        approximateColor(BASE_GROUND_COLOR));
+                GameObject leaf = new Block(new Vector2(i ,j),rectangleRenderablenew);
                 gameObjects.addGameObject(leaf);
             }
         }
