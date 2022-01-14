@@ -23,12 +23,28 @@ public class Tree{
 
     public static void create(GameObjectCollection gameObjects, float x, float y){
         int treeHeight = random.nextInt(4) + 5;
-        float i = y;
-        while (i >= (y - (treeHeight*Block.SIZE))){
-            GameObject block = new Block(new Vector2(x, i),rectangleRenderablenew);
+        float t = y;
+        while (t >= (y - (treeHeight*Block.SIZE))){
+            GameObject block = new Block(new Vector2(x, t),rectangleRenderablenew);
             gameObjects.addGameObject(block);
-            i -= Block.SIZE;
+            t -= Block.SIZE;
         }
-        Leaf.create(gameObjects,new Vector2(x,i));
+        Vector2 center = new Vector2(x,t);
+        int width = random.nextInt(3)+3;
+        int height = random.nextInt(3)+4;
+        int topLeftLeafsX = (int)(center.x() - (width / 2)*Block.SIZE);
+        int topLeftLeafsY = (int)(center.y() - (height/ 2)*Block.SIZE);
+        for(int i = topLeftLeafsX; i < topLeftLeafsX + (width+1) * Block.SIZE ;i+= Block.SIZE){
+            for (int j = topLeftLeafsY; j <topLeftLeafsY + (height+1) * Block.SIZE ;j+=Block.SIZE){
+                Color BASE_GROUND_COLOR = new Color(random.nextInt(10)+ 45
+                        ,random.nextInt(10) + 195,random.nextInt( 10) + 45);
+                RectangleRenderable rectangleRenderablenew = new
+                        RectangleRenderable(ColorSupplier.
+                        approximateColor(BASE_GROUND_COLOR));
+                Leaf leaf = new Leaf(new Vector2(i ,j),rectangleRenderablenew);
+                leaf.schedule();
+                gameObjects.addGameObject(leaf);
+            }
+        }
     }
 }

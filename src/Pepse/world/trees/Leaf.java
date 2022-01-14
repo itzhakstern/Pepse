@@ -1,50 +1,92 @@
 package Pepse.world.trees;
 
-import Pepse.util.ColorSupplier;
 import Pepse.world.Block;
 import danogl.GameObject;
-import danogl.collisions.GameObjectCollection;
+import danogl.collisions.Collision;
+import danogl.components.ScheduledTask;
 import danogl.components.Transition;
-import danogl.gui.rendering.RectangleRenderable;
+import danogl.gui.rendering.Renderable;
 import danogl.util.Vector2;
-
-import java.awt.*;
 import java.util.Random;
 
-public class Leaf {
-    static Random random = new Random();
-    private static final Color BASE_GROUND_COLOR = new Color(50, 200, 30);
-//    private static final RectangleRenderable rectangleRenderablenew = new
-//            RectangleRenderable(ColorSupplier.
-//            approximateColor(BASE_GROUND_COLOR));
+public class Leaf extends GameObject {
+    Random random = new Random();
+    Vector2 topLeft;
+    private Object status;
+    private Transition<Float> horizontal;
 
-    public static void create(GameObjectCollection gameObjects, Vector2 center){
-        int width = random.nextInt(3)+3;
-        int height = random.nextInt(3)+4;
-        int topLeftLeafsX = (int)(center.x() - (width / 2)*Block.SIZE);
-        int topLeftLeafsY = (int)(center.y() - (height/ 2)*Block.SIZE);
-        for(int i = topLeftLeafsX; i < topLeftLeafsX + (width+1) * Block.SIZE ;i+= Block.SIZE){
-            for (int j = topLeftLeafsY; j <topLeftLeafsY + (height+1) * Block.SIZE ;j+=Block.SIZE){
-                Color BASE_GROUND_COLOR = new Color(random.nextInt(10)+ 45
-                         ,random.nextInt(10) + 195,random.nextInt( 10) + 45);
-                RectangleRenderable rectangleRenderablenew = new
-                        RectangleRenderable(ColorSupplier.
-                        approximateColor(BASE_GROUND_COLOR));
-                GameObject leaf = new Block(new Vector2(i ,j),rectangleRenderablenew);
+    public Leaf(Vector2 topLeftCorner, Renderable renderable) {
+        super(topLeftCorner,Vector2.ONES.mult(Block.SIZE),renderable);
+//        super(topLeftCorner, renderable);
+        status = LeafStatus.ON_TREE;
+        topLeft = topLeftCorner;
+    }
 
-                new Transition<Float>(
-                        leaf, //the game object being changed
-                        (angel) -> leaf.renderer().setRenderableAngle(angel),  //the method to call
-                        -10f,    //initial transition value
-                        10f,   //final transition value
-                        Transition.LINEAR_INTERPOLATOR_FLOAT,  //use a cubic interpolator
-                        2,   //transtion fully over half a day
-                        Transition.TransitionType.TRANSITION_BACK_AND_FORTH,
-                        null);
-//                leaf.renderer().setRenderableAngle(angle);
-//                leaf.setDimensions(dimensionsAsVector2);
-                gameObjects.addGameObject(leaf);
-            }
+    @Override
+    public void onCollisionEnter(GameObject other, Collision collision) {
+        super.onCollisionEnter(other, collision);
+        if(other.getTag().equals("ground")){
+            removeComponent(horizontal);
+            new ScheduledTask(this,0,false,() -> setVelocity(Vector2.ZERO));
+            status = LeafStatus.ON_GROUND;
         }
+    }
+
+    private void helperSchedule() {
+        if (status == LeafStatus.ON_GROUND) {
+            renderer().setOpaqueness(1f);
+            setTopLeftCorner(topLeft);
+            status = LeafStatus.ON_TREE;
+        } else if (status == LeafStatus.ON_TREE &&
+                random.nextFloat() <= 0.1) {
+            status = LeafStatus.FALLING;
+            transform().setVelocityY(55);
+            horizontal = setHorizontalV();
+            renderer().fadeOut(8);
+        }
+    }
+
+
+    public void schedule() {
+        setAngle();
+        setDimensions();
+        new ScheduledTask(this, random.nextFloat() * 15, true, this::helperSchedule);
+    }
+
+
+    void setAngle() {
+        new Transition<Float>(
+                this,
+                (angel) -> this.renderer().setRenderableAngle(angel),
+                2f,
+                -2f,
+                Transition.CUBIC_INTERPOLATOR_FLOAT,
+                1f,
+                Transition.TransitionType.TRANSITION_BACK_AND_FORTH,
+                null);
+    }
+
+    void setDimensions() {
+        new Transition<>(
+                this, //the game object being changed
+                this::setDimensions, //the method to call
+                new Vector2(Block.SIZE, Block.SIZE),    //initial transition value
+                new Vector2(Block.SIZE - (1 / 5f) * Block.SIZE, Block.SIZE),   //final transition value
+                Transition.CUBIC_INTERPOLATOR_VECTOR,  //use a cubic interpolator
+                1f,   //transtion fully over half a day
+                Transition.TransitionType.TRANSITION_BACK_AND_FORTH,
+                null);
+    }
+
+    private Transition<Float> setHorizontalV() {
+        return new Transition<>(
+                this,
+                horizontal -> transform().setVelocityX(horizontal),
+                -100f,
+                100f,
+                Transition.CUBIC_INTERPOLATOR_FLOAT,
+                1f,
+                Transition.TransitionType.TRANSITION_BACK_AND_FORTH,
+                null);
     }
 }
