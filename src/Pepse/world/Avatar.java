@@ -10,8 +10,8 @@ import java.awt.event.KeyEvent;
 
 public class Avatar extends GameObject {
     public static final String STAND_PATH = "/Users/davidrotenberg/IdeaProjects/Pepse/asserts/avatar.png";
-    private static final String RUN_PATH = "assets/MarioPositions/run.png";
-    private UserInputListener inputListener;
+    private static final String RUN_PATH = "";
+    private final UserInputListener inputListener;
     private float levelOfEnergy = 100;
 
     /**
