@@ -6,10 +6,20 @@ import danogl.components.CoordinateSpace;
 import danogl.components.Transition;
 import danogl.gui.rendering.OvalRenderable;
 import danogl.util.Vector2;
-//import java.util.Math;
 import java.awt.*;
 
+/**
+ * this class represent the sun in the game
+ */
 public class Sun {
+    private static final Color SUN = Color.YELLOW;
+    private static final Float MIDNIGHT_OPACITY = 360f;
+    /**
+     * this method compute the position of the sun
+     * @param windowDimensions windowDimensions
+     * @param angleInSky angleInSky
+     * @return Vector2
+     */
     private static Vector2 calcSunPosition(Vector2 windowDimensions, float angleInSky){
         Vector2 vector2 = windowDimensions.mult(0.5f);
         int r = 300;
@@ -18,8 +28,15 @@ public class Sun {
         return new Vector2((float) x,(float) y);
     }
 
-    private static final Color SUN = Color.YELLOW;
-    private static final Float MIDNIGHT_OPACITY = 360f;
+
+    /**
+     * this method create the sun
+     * @param windowDimensions windowDimensions
+     * @param cycleLength cycleLength
+     * @param gameObjects gameObjects
+     * @param layer layer
+     * @return GameObject(the sun)
+     */
     public static GameObject create(
             Vector2 windowDimensions,
             float cycleLength,

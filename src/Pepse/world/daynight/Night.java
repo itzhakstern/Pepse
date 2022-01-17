@@ -10,11 +10,20 @@ import danogl.util.Vector2;
 import java.awt.*;
 
 /**
- *
+ *this class represent the night in the game
  */
 public class Night {
     private static final Color NIGHT = Color.BLACK;
     private static final Float MIDNIGHT_OPACITY = 0.5f;
+
+    /**
+     * the method create the night in the game
+     * @param gameObjects gameObjects
+     * @param windowDimensions windowDimensions
+     * @param  cycleLength cycleLength
+     * @param layer layer
+     * @return GameObject(the night)
+     */
     public static GameObject create(
             GameObjectCollection gameObjects,
             Vector2 windowDimensions,

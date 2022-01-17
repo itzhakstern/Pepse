@@ -9,6 +9,8 @@ import danogl.gui.rendering.Renderable;
 import danogl.util.Vector2;
 import java.util.Random;
 
+
+
 public class Leaf extends GameObject {
     Random random = new Random();
     Vector2 topLeft;
@@ -17,7 +19,6 @@ public class Leaf extends GameObject {
 
     public Leaf(Vector2 topLeftCorner, Renderable renderable) {
         super(topLeftCorner,Vector2.ONES.mult(Block.SIZE),renderable);
-//        super(topLeftCorner, renderable);
         status = LeafStatus.ON_TREE;
         topLeft = topLeftCorner;
     }
@@ -25,10 +26,7 @@ public class Leaf extends GameObject {
     @Override
     public void onCollisionEnter(GameObject other, Collision collision) {
         super.onCollisionEnter(other, collision);
-//        System.out.println(other.getTag());
         if(other.getTag().equals("ground")){
-//            System.out.println(other.getTag());
-//            System.out.println("i'm in onCollisionEnter");
             removeComponent(horizontal);
             new ScheduledTask(this,0,false,() -> setVelocity(Vector2.ZERO));
             status = LeafStatus.ON_GROUND;
@@ -53,7 +51,8 @@ public class Leaf extends GameObject {
     public void schedule() {
         setAngle();
         setDimensions();
-        new ScheduledTask(this, random.nextFloat() * 15, true, this::helperSchedule);
+        new ScheduledTask(this, random.nextFloat() * 15,
+                true, this::helperSchedule);
     }
 
 

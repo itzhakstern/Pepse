@@ -8,7 +8,19 @@ import danogl.util.Vector2;
 
 import java.awt.*;
 
+
+/**
+ * this class represent the halo in the game
+ */
 public class SunHalo {
+    /**
+     * the method create the halo in the game
+     * @param gameObjects gameObjects
+     * @param sun sun
+     * @param color color
+     * @param layer layer
+     * @return GameObject
+     */
     public static GameObject create(
             GameObjectCollection gameObjects,
             GameObject sun,
