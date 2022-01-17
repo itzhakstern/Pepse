@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a421892-aff0-4fcc-884c-a6030c7de00c" name="Changes" comment="add class">
-      <change beforePath="$PROJECT_DIR$/src/Pepse/PepseGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pepse/PepseGameManager.java" afterDir="false" />
-    </list>
+    <list default="true" id="3a421892-aff0-4fcc-884c-a6030c7de00c" name="Changes" comment="add class" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,6 +50,12 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
   <component name="RunManager" selected="Cucumber Java.Unnamed (1)">
     <configuration name="Unnamed (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" nameIsGenerated="true">
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/Pepse/PepseGameManager.java" />
@@ -94,7 +98,7 @@
       <workItem from="1642113939017" duration="10783000" />
       <workItem from="1642242370427" duration="6428000" />
       <workItem from="1642281392407" duration="6509000" />
-      <workItem from="1642409297316" duration="16898000" />
+      <workItem from="1642409297316" duration="17241000" />
     </task>
     <task id="LOCAL-00001" summary="add class">
       <created>1641240041301</created>
@@ -187,7 +191,21 @@
       <option name="project" value="LOCAL" />
       <updated>1642442895867</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="add class">
+      <created>1642443144320</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1642443144320</updated>
+    </task>
+    <task id="LOCAL-00015" summary="add class">
+      <created>1642443430649</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1642443430649</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
