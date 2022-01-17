@@ -2,6 +2,7 @@ package Pepse.world.daynight;
 
 import danogl.GameObject;
 import danogl.collisions.GameObjectCollection;
+import danogl.components.CoordinateSpace;
 import danogl.components.Transition;
 import danogl.gui.rendering.OvalRenderable;
 import danogl.util.Vector2;
@@ -26,6 +27,7 @@ public class Sun {
             int layer){
         GameObject sun = new GameObject(new Vector2(windowDimensions.x() / 2, windowDimensions.y() / 2),
                 Vector2.ONES.mult(130),new OvalRenderable(SUN));
+        sun.setCoordinateSpace(CoordinateSpace.CAMERA_COORDINATES);
         sun.setTag("sun");
         gameObjects.addGameObject(sun, layer);
 

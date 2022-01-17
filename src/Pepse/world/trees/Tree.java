@@ -4,6 +4,7 @@ import Pepse.util.ColorSupplier;
 import Pepse.world.Block;
 import danogl.GameObject;
 import danogl.collisions.GameObjectCollection;
+import danogl.collisions.Layer;
 import danogl.gui.rendering.RectangleRenderable;
 import danogl.util.Vector2;
 
@@ -26,7 +27,8 @@ public class Tree{
         float t = y;
         while (t >= (y - (treeHeight*Block.SIZE))){
             GameObject block = new Block(new Vector2(x, t),rectangleRenderablenew);
-            gameObjects.addGameObject(block);
+            block.setTag("race");
+            gameObjects.addGameObject(block,Layer.STATIC_OBJECTS);
             t -= Block.SIZE;
         }
         Vector2 center = new Vector2(x,t);
@@ -43,7 +45,9 @@ public class Tree{
                         approximateColor(BASE_GROUND_COLOR));
                 Leaf leaf = new Leaf(new Vector2(i ,j),rectangleRenderablenew);
                 leaf.schedule();
-                gameObjects.addGameObject(leaf);
+                leaf.setTag("leaf");
+
+                gameObjects.addGameObject(leaf, Layer.DEFAULT+8);
             }
         }
     }

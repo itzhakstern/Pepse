@@ -11,13 +11,11 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Random;
 
-import static java.lang.Math.abs;
-import static java.lang.Math.floor;
-
 public class Terrain {
     private static final Color BASE_GROUND_COLOR = new Color(212, 123, 74);
     private static final int TERRAIN_DEPTH = 20;
     private final GameObjectCollection gameObjects;
+    private final int groundLayer;
     private float groundHeightAtX0;
     private final Vector2 windowDimensions;
     private final PerlinNoise perlinNoise;
@@ -26,14 +24,13 @@ public class Terrain {
 
     public Terrain(GameObjectCollection gameObjects,
                    int groundLayer,
-                   Vector2 windowDimensions){
+                   Vector2 windowDimensions, int seed){
         this.gameObjects = gameObjects;
-        this.groundHeightAtX0 = windowDimensions.y() * (2f/3);
+        this.groundLayer = groundLayer;
         this.windowDimensions = windowDimensions;
-        double seed = new Random().nextInt(150);
         heightVector = new ArrayList<>();
         perlinNoise = new PerlinNoise(seed);
-        random = new Random();
+        random = new Random(seed);
     }
 
     public float groundHeightAt(float x) {
@@ -42,18 +39,20 @@ public class Terrain {
     }
 
     public void createInRange(int minX, int maxX) {
-        for (int x = minX; x <= maxX; x += Block.SIZE) {
+        for (int x = minX; x <= (maxX); x += Block.SIZE) {
             float groundHeightAtX = groundHeightAt(x);
             double floor = Math.floor(groundHeightAtX / Block.SIZE) * Block.SIZE;
             heightVector.add(floor);
-            while (floor <= this.windowDimensions.y()){
+            while (floor <= this.windowDimensions.y()*(3f/2)){
+
                 Color BASE_GROUND_COLOR = new Color(random.nextInt( 10) + 210,
                         random.nextInt( 10) +120, random.nextInt( 10) +75);
                 RectangleRenderable rectangleRenderablenew = new RectangleRenderable(ColorSupplier.
                         approximateColor(BASE_GROUND_COLOR));
+
                 GameObject block = new Block(new Vector2(x,(int)floor),rectangleRenderablenew);
                 block.setTag("ground");
-                this.gameObjects.addGameObject(block);
+                this.gameObjects.addGameObject(block, groundLayer);
                 floor += block.getDimensions().y();
             }
         }

@@ -25,7 +25,10 @@ public class Leaf extends GameObject {
     @Override
     public void onCollisionEnter(GameObject other, Collision collision) {
         super.onCollisionEnter(other, collision);
+//        System.out.println(other.getTag());
         if(other.getTag().equals("ground")){
+//            System.out.println(other.getTag());
+//            System.out.println("i'm in onCollisionEnter");
             removeComponent(horizontal);
             new ScheduledTask(this,0,false,() -> setVelocity(Vector2.ZERO));
             status = LeafStatus.ON_GROUND;
