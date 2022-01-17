@@ -73,14 +73,9 @@ public class PepseGameManager extends GameManager{
         buildTrees.creatInRange(minXCoord - (int)(windowDimensions.x()/10),maxXCoord + (int)(windowDimensions.x()/10));
 
 
-
-
-
-
-        ImageRenderable standAvatarImage = imageReader.readImage(Avatar.STAND_PATH, true);
-        gameObjects().layers().shouldLayersCollide(Layer.DEFAULT+8,Layer.STATIC_OBJECTS,true);
-        gameObjects().layers().shouldLayersCollide(Layer.DEFAULT+8,8,false);
-        Renderable avatarImgToDisplay = standAvatarImage;
+        //        gameObjects().layers().shouldLayersCollide(Layer.DEFAULT+8,Layer.STATIC_OBJECTS,true);
+//        gameObjects().layers().shouldLayersCollide(Layer.DEFAULT+8,8,false);
+        Renderable avatarImgToDisplay = imageReader.readImage(Avatar.STAND_PATH, true);
         float x = windowController.getWindowDimensions().x()* 1/2f  - 24;
         Vector2 avatrCenter = new Vector2(x,terrain.groundHeightAt(x)- 24).mult(0.8f);
         avatar = new Avatar(avatrCenter,Vector2.ONES.mult(50),avatarImgToDisplay, inputListener);
