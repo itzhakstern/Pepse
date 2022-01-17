@@ -101,10 +101,11 @@ public class PepseGameManager extends GameManager{
     //to change !!!!!!!!
     private void avatarPositionUpdate() {
         if (avatar.getTopLeftCorner().y() + (Block.SIZE) > terrain.groundHeightAt(avatar.getTopLeftCorner().x()) ) {
-            avatar.setTopLeftCorner(new Vector2(avatar.getTopLeftCorner().x(), windowDimensions.y() -
-                    terrain.groundHeightAt(avatar.getTopLeftCorner().x() - avatar.getDimensions().y())));
-
-        } }
+            Vector2 TopLeftCorner = new Vector2(avatar.getTopLeftCorner().x(), windowDimensions.y() -
+                    terrain.groundHeightAt(avatar.getTopLeftCorner().x() - avatar.getDimensions().y()));
+            avatar.setTopLeftCorner(TopLeftCorner);
+        }
+    }
 
     private void conteuesWorld() {
         int width = (int) windowDimensions.x();
