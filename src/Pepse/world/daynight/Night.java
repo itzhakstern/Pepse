@@ -9,6 +9,9 @@ import danogl.util.Vector2;
 
 import java.awt.*;
 
+/**
+ *
+ */
 public class Night {
     private static final Color NIGHT = Color.BLACK;
     private static final Float MIDNIGHT_OPACITY = 0.5f;
