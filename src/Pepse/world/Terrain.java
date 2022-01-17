@@ -6,22 +6,29 @@ import danogl.GameObject;
 import danogl.collisions.GameObjectCollection;
 import danogl.gui.rendering.RectangleRenderable;
 import danogl.util.Vector2;
-
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Random;
 
+
+/**
+ * the class is responsible for the floor in the game
+ */
 public class Terrain {
-    private static final Color BASE_GROUND_COLOR = new Color(212, 123, 74);
-    private static final int TERRAIN_DEPTH = 20;
     private final GameObjectCollection gameObjects;
     private final int groundLayer;
-    private float groundHeightAtX0;
     private final Vector2 windowDimensions;
     private final PerlinNoise perlinNoise;
     private final ArrayList<Double> heightVector;
     private final Random random;
 
+    /**
+     * the constructor of the class
+     * @param gameObjects gameObjects
+     * @param groundLayer groundLayer
+     * @param windowDimensions windowDimensions
+     * @param seed seed
+     */
     public Terrain(GameObjectCollection gameObjects,
                    int groundLayer,
                    Vector2 windowDimensions, int seed){
@@ -33,11 +40,21 @@ public class Terrain {
         random = new Random(seed);
     }
 
+    /**
+     * the method get the high of the ground in the given x
+     * @param x x
+     * @return the high at x
+     */
     public float groundHeightAt(float x) {
         float v = perlinNoise.noise(x / 200);
         return (this.windowDimensions.y() * (v+1)) * (2f/3);
     }
 
+    /**
+     * the method create the floor in the given range
+     * @param minX minX
+     * @param maxX maxX
+     */
     public void createInRange(int minX, int maxX) {
         for (int x = minX; x <= (maxX); x += Block.SIZE) {
             float groundHeightAtX = groundHeightAt(x);

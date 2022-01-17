@@ -5,12 +5,21 @@ import danogl.collisions.GameObjectCollection;
 import danogl.components.CoordinateSpace;
 import danogl.gui.rendering.RectangleRenderable;
 import danogl.util.Vector2;
-
 import java.awt.*;
 
+/**
+ * the class represent the sky in the game
+ */
 public class Sky {
     private static final Color BASIC_SKY_COLOR = Color.decode("#80C6E5");
 
+    /**
+     * the method create the sky
+     * @param gameObjects gameObjects
+     * @param windowDimensions windowDimensions
+     * @param skyLayer skyLayer
+     * @return GameObject (the sky)
+     */
     public static GameObject create(GameObjectCollection gameObjects,
                                     Vector2 windowDimensions, int skyLayer){
         GameObject sky = new GameObject(

@@ -15,16 +15,17 @@ import danogl.gui.SoundReader;
 import danogl.gui.UserInputListener;
 import danogl.gui.WindowController;
 import danogl.gui.rendering.Camera;
-import danogl.gui.rendering.ImageRenderable;
 import danogl.gui.rendering.Renderable;
 import danogl.util.Vector2;
-
 import java.awt.*;
 import java.util.HashMap;
 import java.util.Random;
 
-public class PepseGameManager extends GameManager{
 
+/**
+ * the class represent the game
+ */
+public class PepseGameManager extends GameManager{
     private GameObject avatar;
     private Vector2 windowDimensions;
     private BuildTrees buildTrees;
@@ -33,6 +34,10 @@ public class PepseGameManager extends GameManager{
     private int maxXCoord;
     private HashMap<String, Integer> tagMap;
 
+    /**
+     * the main function
+     * @param args args
+     */
     public static void main(String[] args) {
         new PepseGameManager().run();
     }
@@ -45,40 +50,33 @@ public class PepseGameManager extends GameManager{
         super.initializeGame(imageReader, soundReader, inputListener, windowController);
         tagMap = new HashMap<String,Integer>();
         tagMap.put("ground",-100);
-        tagMap.put("leaf",8);
+        tagMap.put("leaf",0);
         tagMap.put("race",-100);
         Random random = new Random();
         int seed = random.nextInt(100) + 10;
-
-
         windowDimensions = windowController.getWindowDimensions();
         minXCoord = (int) (Math.floor( -windowDimensions.x() / Block.SIZE) * Block.SIZE);
         maxXCoord = (int) (Math.floor((2 * windowDimensions.x()) / Block.SIZE) * Block.SIZE);
-        GameObject sky = Sky.create(this.gameObjects(),
+        Sky.create(this.gameObjects(),
                 windowController.getWindowDimensions(), Layer.BACKGROUND);
-
-
         terrain = new Terrain(this.gameObjects(), Layer.STATIC_OBJECTS,
                 windowController.getWindowDimensions(), seed);
         terrain.createInRange(minXCoord,maxXCoord);
-        GameObject night = Night.create(gameObjects(),windowController.getWindowDimensions(),
+        Night.create(gameObjects(),windowController.getWindowDimensions(),
                 10,Layer.FOREGROUND);
         GameObject sun = Sun.create(windowController.getWindowDimensions(),
                 1500,this.gameObjects(), Layer.BACKGROUND);
-        GameObject sunHalo = SunHalo.create(this.gameObjects(),sun,
+        SunHalo.create(this.gameObjects(),sun,
                 new Color(255, 255, 0, 20),
                 Layer.BACKGROUND + 10);
 
         buildTrees = new BuildTrees(gameObjects(),terrain, seed);
         buildTrees.creatInRange(minXCoord - (int)(windowDimensions.x()/10),maxXCoord + (int)(windowDimensions.x()/10));
 
-
-        //        gameObjects().layers().shouldLayersCollide(Layer.DEFAULT+8,Layer.STATIC_OBJECTS,true);
-//        gameObjects().layers().shouldLayersCollide(Layer.DEFAULT+8,8,false);
         Renderable avatarImgToDisplay = imageReader.readImage(Avatar.STAND_PATH, true);
         float x = windowController.getWindowDimensions().x()* 1/2f  - 24;
         Vector2 avatrCenter = new Vector2(x,terrain.groundHeightAt(x)- 24).mult(0.8f);
-        avatar = new Avatar(avatrCenter,Vector2.ONES.mult(50),avatarImgToDisplay, inputListener);
+        avatar = new Avatar(avatrCenter,Vector2.ONES.mult(50),avatarImgToDisplay, inputListener, imageReader);
         gameObjects().addGameObject(avatar, Layer.DEFAULT);
         setCamera(new Camera(avatar, windowDimensions.mult(0.5f).subtract(avatrCenter),
                 windowController.getWindowDimensions(),
@@ -89,19 +87,13 @@ public class PepseGameManager extends GameManager{
     public void update(float deltaTime) {
         conteuesWorld();
         removeObjects();
-        avatarPositionUpdate();
         super.update(deltaTime);
     }
 
-    //to change !!!!!!!!
-    private void avatarPositionUpdate() {
-        if (avatar.getTopLeftCorner().y() + (Block.SIZE) > terrain.groundHeightAt(avatar.getTopLeftCorner().x()) ) {
-            Vector2 TopLeftCorner = new Vector2(avatar.getTopLeftCorner().x(), windowDimensions.y() -
-                    terrain.groundHeightAt(avatar.getTopLeftCorner().x() - avatar.getDimensions().y()));
-            avatar.setTopLeftCorner(TopLeftCorner);
-        }
-    }
 
+    /**
+     * the method responsible for building the infinite world
+     */
     private void conteuesWorld() {
         int width = (int) windowDimensions.x();
         float centerMin = avatar.getCenter().x() - minXCoord;
@@ -118,6 +110,9 @@ public class PepseGameManager extends GameManager{
         }
     }
 
+    /**
+     * the method remove unnecessary objects in the game
+     */
     private void removeObjects() {
         for(GameObject gameObject : gameObjects()){
             float index = gameObject.getTopLeftCorner().x();
@@ -130,6 +125,11 @@ public class PepseGameManager extends GameManager{
     }
 
 
+    /**
+     * the method continues the ground in the given range
+     * @param minX minX
+     * @param maxX maxX
+     */
     private void conteuesGround(int minX, int maxX){
         buildTrees.creatInRange(minX,maxX);
         terrain.createInRange(minX,maxX);

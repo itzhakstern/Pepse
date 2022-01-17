@@ -10,18 +10,26 @@ import danogl.util.Vector2;
 import java.util.Random;
 
 
-
+/**
+ * this class represent a leaf in the game
+ */
 public class Leaf extends GameObject {
     Random random = new Random();
     Vector2 topLeft;
     private Object status;
     private Transition<Float> horizontal;
 
+    /**
+     * the constructor of the class
+     * @param topLeftCorner topLeftCorner
+     * @param renderable renderable
+     */
     public Leaf(Vector2 topLeftCorner, Renderable renderable) {
         super(topLeftCorner,Vector2.ONES.mult(Block.SIZE),renderable);
         status = LeafStatus.ON_TREE;
         topLeft = topLeftCorner;
     }
+
 
     @Override
     public void onCollisionEnter(GameObject other, Collision collision) {
@@ -33,6 +41,9 @@ public class Leaf extends GameObject {
         }
     }
 
+    /**
+     * this method called as a ScheduledTask
+     */
     private void helperSchedule() {
         if (status == LeafStatus.ON_GROUND) {
             renderer().setOpaqueness(1f);
@@ -48,6 +59,9 @@ public class Leaf extends GameObject {
     }
 
 
+    /**
+     * schedule method
+     */
     public void schedule() {
         setAngle();
         setDimensions();
@@ -56,6 +70,9 @@ public class Leaf extends GameObject {
     }
 
 
+    /**
+     * Transition
+     */
     void setAngle() {
         new Transition<Float>(
                 this,
@@ -68,18 +85,25 @@ public class Leaf extends GameObject {
                 null);
     }
 
+    /**
+     * Transition
+     */
     void setDimensions() {
         new Transition<>(
-                this, //the game object being changed
-                this::setDimensions, //the method to call
-                new Vector2(Block.SIZE, Block.SIZE),    //initial transition value
-                new Vector2(Block.SIZE - (1 / 5f) * Block.SIZE, Block.SIZE),   //final transition value
-                Transition.CUBIC_INTERPOLATOR_VECTOR,  //use a cubic interpolator
-                1f,   //transtion fully over half a day
+                this,
+                this::setDimensions,
+                new Vector2(Block.SIZE, Block.SIZE),
+                new Vector2(Block.SIZE - (1 / 5f) * Block.SIZE, Block.SIZE),
+                Transition.CUBIC_INTERPOLATOR_VECTOR,
+                1f,
                 Transition.TransitionType.TRANSITION_BACK_AND_FORTH,
                 null);
     }
 
+    /**
+     * Transition
+     * @return Transition
+     */
     private Transition<Float> setHorizontalV() {
         return new Transition<>(
                 this,
