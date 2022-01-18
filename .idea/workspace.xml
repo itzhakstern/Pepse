@@ -5,21 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a421892-aff0-4fcc-884c-a6030c7de00c" name="Changes" comment="add class">
-      <change afterPath="$PROJECT_DIR$/README" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asserts/avatar.png" beforeDir="false" afterPath="$PROJECT_DIR$/asserts/avatar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pepse/Pepse/PepseGameManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pepse/Pepse/PepseGameManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pepse/Pepse/world/Block.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pepse/Pepse/world/Block.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pepse/Pepse/world/Sky.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pepse/Pepse/world/Sky.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pepse/Pepse/world/Terrain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pepse/Pepse/world/Terrain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pepse/PepseGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pepse/PepseGameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pepse/world/Avatar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pepse/world/Avatar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pepse/world/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pepse/world/Block.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pepse/world/Sky.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pepse/world/Sky.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pepse/world/Terrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pepse/world/Terrain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pepse/world/trees/Leaf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pepse/world/trees/Leaf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pepse/world/trees/LeafStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pepse/world/trees/LeafStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pepse/world/trees/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pepse/world/trees/Tree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README" beforeDir="false" afterPath="$PROJECT_DIR$/README" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +101,7 @@
       <workItem from="1642113939017" duration="10783000" />
       <workItem from="1642242370427" duration="6428000" />
       <workItem from="1642281392407" duration="6509000" />
-      <workItem from="1642409297316" duration="23410000" />
+      <workItem from="1642409297316" duration="24948000" />
     </task>
     <task id="LOCAL-00001" summary="add class">
       <created>1641240041301</created>
@@ -242,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642445909448</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="add class">
+      <created>1642450179188</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1642450179188</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

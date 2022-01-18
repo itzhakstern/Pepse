@@ -6,7 +6,19 @@ itzhak
 
 URL explanation:
 
+
 Infinite world explanation:
+To create the infinite world we first overwrite the function update and then when
+the function update was called we checked if the position of the avatar player was changed.
+In case that it was a change in the position of avatar we removed the unnecessary objects
+from the game and therefor we did not use unnecessary cpu circles.
+In case that was not a change in the avatar position we act as GameManager act.
+(we did not add anything)
 
 Tree class explanation:
-
+we have here x class:
+    BuildTree class: this class create the trees in the game (call Tree.create x times)
+    Tree class: this class first create the races in the spastic range and then create the leafs
+    around each race by calling the constructor of the leaf class.
+    Leaf class: this class represent the leafs in the game.
+    LeafStatus: this class represent the stats of the leafs {ON_TREE, FALLING, ON_GROUND}
